@@ -1,0 +1,29 @@
+[project]
+name = "mcp-accessibility-models"
+version = "1.0.0"
+description = "Shared accessibility data models and helpers for MCP servers"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[project.urls]
+Repository = "https://github.com/anthropics/mcp-accessibility-models"
+Issues = "https://github.com/anthropics/mcp-accessibility-models/issues"
