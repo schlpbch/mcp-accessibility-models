@@ -12,6 +12,7 @@ dependencies = [
 dev = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.23.0",
+    "ruff>=0.14.7",
 ]
 
 [build-system]
@@ -23,6 +24,11 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.13",
+]
 
 [project.urls]
 Repository = "https://github.com/anthropics/mcp-accessibility-models"

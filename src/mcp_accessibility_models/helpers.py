@@ -60,7 +60,7 @@ def extract_amadeus_hotel_accessibility(hotel_data: Dict[str, Any]) -> Dict[str,
         Dictionary with accessibility information
     """
     facilities = hotel_data.get("facilities", [])
-    descriptions = hotel_data.get("descriptions", {})
+    hotel_data.get("descriptions", {})
 
     # Build facility list from facilities array
     facility_list = []
@@ -83,7 +83,8 @@ def extract_amadeus_hotel_accessibility(hotel_data: Dict[str, Any]) -> Dict[str,
     ]
 
     has_accessibility = any(
-        keyword.lower() in str(facility).lower() for facility in facility_list
+        keyword.lower() in str(facility).lower()
+        for facility in facility_list
         for keyword in accessibility_keywords
     )
 
@@ -99,7 +100,9 @@ def extract_amadeus_hotel_accessibility(hotel_data: Dict[str, Any]) -> Dict[str,
 # =====================================================================
 
 
-def extract_flight_accessibility_from_amadeus(flight_offer: Dict[str, Any]) -> Dict[str, Any]:
+def extract_flight_accessibility_from_amadeus(
+    flight_offer: Dict[str, Any],
+) -> Dict[str, Any]:
     """Extract accessibility information from Amadeus flight offer.
 
     Amadeus returns traveler pricing which may include special service requests (SSR).
@@ -117,7 +120,7 @@ def extract_flight_accessibility_from_amadeus(flight_offer: Dict[str, Any]) -> D
     for pricing in traveler_pricings:
         fare_details = pricing.get("fareDetailsBySegment", [])
         for detail in fare_details:
-            included_checks = detail.get("includedCheckedBags", {})
+            detail.get("includedCheckedBags", {})
             # SSR codes are not typically in the response, but could be passed by user
             # This is a placeholder for extracting them if available in extended response
             pass

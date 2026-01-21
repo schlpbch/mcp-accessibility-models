@@ -1,6 +1,5 @@
 """Tests for accessibility Pydantic models."""
 
-import pytest
 from mcp_accessibility_models import (
     FlightAccessibility,
     HotelAccessibility,
@@ -115,7 +114,11 @@ class TestHotelAccessibility:
     def test_hotel_accessibility_bathroom_types(self):
         """Test HotelAccessibility with various bathroom types."""
         accessibility = HotelAccessibility(
-            accessible_bathroom_types=["roll-in shower", "grab bars", "accessible toilet"],
+            accessible_bathroom_types=[
+                "roll-in shower",
+                "grab bars",
+                "accessible toilet",
+            ],
         )
         assert len(accessibility.accessible_bathroom_types) == 3
         assert "roll-in shower" in accessibility.accessible_bathroom_types
