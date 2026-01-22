@@ -47,3 +47,7 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+
+# MyPy
+.mypy_cache/
+.dmypy.json 
